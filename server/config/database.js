@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
-const User = require('../data/User')
-
-require('../data/renting')
+const User = require('../data/User') 
 
 mongoose.Promise = global.Promise
 

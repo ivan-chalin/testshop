@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title rentcar
+    link(href="/sait.css" rel="stylesheet") 
+body
+    if !currentUser
+        div.nav  
+            a(href='./register') register
+            a(href='/login') login 
+    if currentUser
+        div.nav  
+            a(href='/addcar') addfurniture
+            a(href='/car/list') list
+            a(href='/profil/') profil
+            div.pozdrav wellcome 
+            h4.pozdrav=currentUser.username 
