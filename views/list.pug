@@ -1,0 +1,16 @@
+extends home.pug
+block content
+    h1 our suggestions
+    br 
+    each i in produkt
+        div.show
+            p=i.name
+            p=i.price
+            img(src=i.image, alt="error")
+    br
+    div.page 
+        each i in pg 
+            a(href='/list?page=' + i)
+                span=i
+    br
+    br 

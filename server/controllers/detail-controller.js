@@ -1,34 +1,34 @@
- 
+let detail = require('../data/detail')
 let usar = require('../data/User')
 
 module.exports = {
-    addcar:(req, res)=>{
-        res.render('car/addcar')
+    adddetail:(req, res)=>{
+        res.render('adddetail')
     },
-    postcar:(req, res)=>{
-        let novcar = req.body
-        car.create({
-            model:novcar.model,
-            year:novcar.year,
-            priceperday:novcar.priceperday,
-            image:novcar.image  
-        }).then(()=>{res.render('car/addcar')}) 
+    postdetail:(req, res)=>{
+        let obj = req.body
+        detail.create({
+           name:obj.name,
+           price:obj.price,
+           count:obj.count,
+           image:obj.image  
+        }).then(()=>{
+            res.redirect('/') 
+        }) 
 },
-    listcar:(req, res) =>{
+    listing:(req, res) =>{
         let page = parseInt(req.query.page) || 1
         let size = 2
 
-        car.find({})
-        .sort('priceperday')
-       // .skip((page - 1)*size)
-       // .limit(size) 
+        detail.find({})
+        .sort('price') 
         .then((data)=>{ 
             let count = []
             for(let i = 0; i <= data.length / 2;i++){count.push(i + 1)}
-            res.render('car/list', {cars:data.slice((page -1)*size, size * page),
+            res.render('list', {produkt:data.slice((page -1)*size, size * page),
                  prevpage: page - 1, 
                  nextpage:page + 1,
-                 stranica: count
+                 pg: count
                 }   
         )})
     },

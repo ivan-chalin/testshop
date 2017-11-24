@@ -10,4 +10,8 @@ module.exports = (app) => {
   app.get('/login', controllers.users.loginGet)
   app.post('/login', controllers.users.loginPost)
   app.get('/logout', controllers.users.logout) 
+
+  app.get('/list', controllers.detail.listing)
+  app.get('/adddetail', controllers.detail.adddetail)
+  app.post('/adddetail', controllers.detail.postdetail)
 }
