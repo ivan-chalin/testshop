@@ -1,6 +1,5 @@
 const encryption = require('../utilities/encryption')
-const User = require('mongoose').model('User')
-let renting = require('../data/renting')
+const User = require('mongoose').model('User') 
 
 module.exports = {
   registerGet: (req, res) => {

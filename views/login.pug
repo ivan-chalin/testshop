@@ -1,0 +1,14 @@
+extends home.pug
+block content
+    h1 login
+    div.log
+        form(action="/login" method="POST")
+            label username
+            br
+            input(type="text" name="username" )
+            br
+            label password
+            br
+            input(type="text" name="password" )
+            br
+            button login

@@ -1,5 +1,4 @@
-let car = require('../data/car')
-let rent = require('../data/renting')
+ 
 let usar = require('../data/User')
 
 module.exports = {

@@ -9,5 +9,5 @@ module.exports = (app) => {
   app.post('/register', controllers.users.registerPost)
   app.get('/login', controllers.users.loginGet)
   app.post('/login', controllers.users.loginPost)
-  app.post('logout', controllers.users.logout) 
+  app.get('/logout', controllers.users.logout) 
 }

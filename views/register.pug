@@ -1,0 +1,23 @@
+extends home.pug
+block content
+    h1 register
+    br
+    div.log
+        form(action="/register" method="POST")
+            label username
+            br
+            input(type="text" name="username" )
+            br
+            label first name
+            br
+            input(type="text" name='firstName')
+            br
+            label last name
+            br
+            input(type="text" name='lastName')
+            br
+            label password
+            br
+            input(name="password")
+            br
+            button register
