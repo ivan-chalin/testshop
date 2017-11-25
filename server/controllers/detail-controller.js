@@ -35,40 +35,7 @@ module.exports = {
 
     show:(req, res)=>{
         let id = req.params.id
-        car.findById({_id:id})
-        .then((data)=> {res.render('car/rent', {data:data})})
-    },
-    rentvane:(req, res)=>{
-        let carid = req.params.id
-        let userid = req.user._id
-        let days = parseInt(req.body.day) 
-
-        car.findById(carid)
-        .then((car)=>{ 
-            if(car.isrented){
-                res.render('home')
-                return
-            }
-            rent.create({
-                user:userid,
-                car:carid,
-                days:days,
-                totalprice:car.priceperday * days   
-            }).then(()=>{
-                car.isrented = true
-                car.save()
-                res.redirect('/car/list')
-            })
-        })
-         
-    },
-    unrent:(req, res)=>{
-        let carid = req.params.id
-        car.findById(carid)
-           .then((kola)=>{
-               kola.isrented = false
-               kola.save()
-               res.redirect('/car/list')
-           })
+        detail.findById({_id:id})
+        .then((data)=> {res.render('buy', {data:data})})
     }
 }

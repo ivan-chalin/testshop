@@ -53,7 +53,8 @@ module.exports = {
           if (err) {
             res.locals.globalError = err
             res.render('login')
-          }
+          
+          } 
 
           res.redirect('/')
         })
@@ -63,21 +64,6 @@ module.exports = {
     req.logout()
     res.redirect('/')
   },
-   profil:(req, res)=>{
-     let userid = req.user._id
-     renting.find({user:userid})
-          .populate('car') 
-          .then((rentings)=>{ 
-            if(rentings = []){
-              console.log('nqma')
-              res.render('profil',{obj:'nqmate naeti koli'});
-              return
-            }
-            let rez = []
-            let totcena = []
-            for(let i of rentings){rez.push(i.days), totcena.push(i.totalprice)} 
-            res.render('profil',{ userdata:rentings, countday:rez.reduce((a,b)=>a + b), tot:totcena.reduce((a,b)=>a + b)})
-             
-          })
+   profil:(req, res)=>{  
    }
 }

@@ -8,17 +8,17 @@ head
     link(href="/site.css" rel="stylesheet") 
 body
     header
-        img(src="header.jpg", alt="error")
+        img(src="/header.jpg", alt="error")
         if !currentUser
             div  
                 a(href='./register') register
-                a(href='/login') login 
-        if currentUser
-            div  
-                a(href='/adddetail') addfurniture
+                a(href='/login') login
                 a(href='/list') list
+        if currentUser  
+            div  
+                a(href='/list') list 
                 a(href='/profil/') profil
                 a(href='/logout') logout
             div.greeting wellcome 
-            h4.greeting=currentUser.username 
+            h4.greeting=currentUser.username  
     block content

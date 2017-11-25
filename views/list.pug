@@ -7,6 +7,9 @@ block content
             p=i.name
             p=i.price
             img(src=i.image, alt="error")
+            br
+            br
+            a(href='/buy/' +i._id) browse and buy
     br
     div.page 
         each i in pg 
