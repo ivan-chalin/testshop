@@ -1,5 +1,6 @@
 let detail = require('../data/detail')
 let usar = require('../data/User')
+let deal = require('../data/deal')
 
 module.exports = {
     adddetail:(req, res)=>{
@@ -37,5 +38,23 @@ module.exports = {
         let id = req.params.id
         detail.findById({_id:id})
         .then((data)=> {res.render('buy', {data:data})})
+    },
+    shopping:(req, res)=>{
+       let detailid = req.params.id
+       let userid = req.user._id 
+       detail.findOne({_id:detailid}) 
+       .then((produkt)=>{
+           deal.create({
+            user:userid,
+            detail:detailid,
+            date:Date.now(),
+            totalprice:produkt.price  
+           })
+        let count = produkt.count 
+         produkt.count = count -1
+         produkt.save()
+           res.render('home', {tanks:'thank you for your purchase'})
+       })
+        
     }
 }

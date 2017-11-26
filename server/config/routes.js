@@ -16,4 +16,6 @@ module.exports = (app) => {
   app.post('/adddetail',auth.isInRole('Admin'), controllers.detail.postdetail)
 
   app.get('/buy/:id',auth.isAuthenticated, controllers.detail.show)
+
+  app.post('/shopping/:id', controllers.detail.shopping)
 }
