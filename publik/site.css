@@ -100,3 +100,19 @@ h5{
     100%{margin-left: 1000px;color: rgba(195, 170, 218, 0.685)} 
 }
 h3{text-align: center;color: rgb(231, 7, 82);font-size: 35px}
+
+.table{ 
+    text-align:center ;
+    margin-left: 40%;
+    
+}
+.table th{
+    padding: 10px
+}
+footer{
+    border: 1px solid rgb(255, 217, 0);
+    width:100%;
+    height:100px;
+    background-color:rgb(87, 77, 77);
+    margin-bottom:10px    
+}

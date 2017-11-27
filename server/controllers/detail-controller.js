@@ -47,7 +47,7 @@ module.exports = {
            deal.create({
             user:userid,
             detail:detailid,
-            date:Date.now(),
+            date:new Date().toDateString(),
             totalprice:produkt.price  
            })
         let count = produkt.count 

@@ -1,17 +1,15 @@
 extends home.pug
 block content
-    h1 adminpanel
-    div.adminmenu 
-        a(href='/adddetail') adddetail
+    h1 your profile
     br
     div.table
         table
             tr
-                th stocks
+                th name
                 th price
-                th count
-            each val in stock
+                th date
+            each val in purchases
                 tr
                     td=val.detail.name
                     td=val.detail.price
-                    td=val.detail.count
+                    td=val.date

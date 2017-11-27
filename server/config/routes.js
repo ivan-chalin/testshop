@@ -10,10 +10,11 @@ module.exports = (app) => {
   app.get('/login', controllers.users.loginGet)
   app.post('/login', controllers.users.loginPost)
   app.get('/logout', controllers.users.logout) 
+  app.get('/profil', controllers.users.profil)
 
   app.get('/list', controllers.detail.listing)
   app.get('/adddetail',auth.isInRole('Admin'), controllers.detail.adddetail)
-  app.post('/adddetail',auth.isInRole('Admin'), controllers.detail.postdetail)
+  app.post('/adddetail',auth.isInRole('Admin'), controllers.detail.postdetail) 
 
   app.get('/buy/:id',auth.isAuthenticated, controllers.detail.show)
 
