@@ -21,15 +21,20 @@ body
                 a(href='/profil/') profil
                 a(href='/logout') logout
             div.greeting wellcome 
-            h4.greeting=currentUser.username  
-    block content
-        h1 our test online shop
-        br
-        div.anim
-            span this is a test application
-        br 
-        br
-        h5 this is not a real store, here all is for testing purposes
-        br
-        h3=tanks
+            h4.greeting=currentUser.username
+    section.mean  
+        block content
+            h1 our test online shop
+            br 
+            br
+            h5 this is not a real store, here all is for testing purposes
+            br
+            h3=tanks
+            br
+            br
+            div.anim
+                p.first
+                    img(src="first.jpg")
+                p.second
+                    img(src="second.jpg") 
     footer 

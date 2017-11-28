@@ -3,7 +3,7 @@ let deal = require('../data/deal')
 
 module.exports = {
    index: (req, res) => { 
-     if(req.user === undefined || req.user.username !='admin') {
+     if(req.user === undefined || req.user.username !='Admin') {
      res.render('home') 
      }
      else{ 
