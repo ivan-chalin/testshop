@@ -9,8 +9,12 @@ module.exports = {
   },
 
   registerPost: (req, res) => {
-    let reqUser = req.body
-    // Add validations!
+    let reqUser = req.body 
+
+    if(req.body.username === '' || req.body.firstName === '' || req.body.lastName === '' ||req.body.password === ''){
+      res.locals.err = 'invalid data'
+      res.render('register')
+    } else{
 
     let salt = encryption.generateSalt()
     let hashedPassword = encryption.generateHashedPassword(salt, reqUser.password)
@@ -31,6 +35,7 @@ module.exports = {
         res.redirect('/')
       })
     })
+  }
   },
   loginGet: (req, res) => {
     res.render('login')

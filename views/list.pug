@@ -3,13 +3,14 @@ block content
     h1 our suggestions
     br 
     each i in produkt
-        div.show
+        div.show 
             p=i.name
-            p=i.price
+            p=i.price 
+                strong $
             img(src=i.image, alt="error")
             br
             br
-            a(href='/buy/' +i._id) browse and buy
+            a(href='/buy/' +i._id) browse and buy 
     br
     div.page 
         each i in pg 

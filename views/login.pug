@@ -1,6 +1,8 @@
 extends home.pug
 block content
     h1 login
+    br
+    h2=globalError
     div.log
         form(action="/login" method="POST")
             label username
@@ -9,6 +11,6 @@ block content
             br
             label password
             br
-            input(type="text" name="password" )
+            input(type="password" name="password" )
             br
             button login
