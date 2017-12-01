@@ -1,20 +1,21 @@
 extends home.pug
 block content
-    h1 our suggestions
-    br 
-    each i in produkt
-        div.show 
-            p=i.name
-            p=i.price 
-                strong $
-            img(src=i.image, alt="error")
-            br
-            br
-            a(href='/buy/' +i._id) browse and buy 
-    br
-    div.page 
-        each i in pg 
-            a(href='/list?page=' + i)
-                span=i
-    br
-    br 
+    section.mean
+        h1 our suggestions
+        br 
+        each i in produkt
+            div.show 
+                p=i.name
+                p=i.price 
+                    strong $
+                img(src=i.image, alt="error")
+                br
+                br
+                a(href='/buy/' +i._id) browse and buy 
+        br
+        div.page 
+            each i in pg 
+                a(href='/list?page=' + i)
+                    span=i
+        br
+        br 

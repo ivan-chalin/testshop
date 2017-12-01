@@ -1,9 +1,11 @@
 body{
-    background: linear-gradient(white, rgb(69, 69, 165))
+    background: linear-gradient(white, rgb(69, 69, 165));
+    padding:0px;
+    margin:  0px
 }
 header img{
     width: 100%;
-    height:200px 
+    height:250px 
 }
 a{
     text-decoration:none 
@@ -14,20 +16,20 @@ h2{
 }
 header a{
     margin-left: 10%;
-    position: relative;
-    top: -30px;
+    position:relative; 
+    top:-40px; 
     color:rgb(212, 131, 10);
-    font-size: 25px  
-}
+    font-size: 25px;  
+} 
 header{
-    text-align:center 
+    text-align:center; 
 }
 .greeting{
-    position: relative;
-    top: -150px;
-    display: inline;
+    position: absolute;
+    top: 100px; 
     color: rgb(233, 93, 13);
-    font-size:35px 
+    font-size:35px;
+    margin-left:-10%  
 }
 h1{
     text-align: center;
@@ -78,7 +80,7 @@ strong{
     background-color:rgb(204, 193, 193) ;
     animation-name: buy;
     animation-duration: 2s;
-    animation-iteration-count:3    
+    animation-iteration-count:2    
 }
 .adminmenu{
     text-align:center; 
@@ -129,7 +131,6 @@ footer{
     height:900px; 
     margin-left: 10%;
     background-image: url('test.jpg'); 
-    margin-top:-35px 
 } 
 .first{ 
     width: 100px;
@@ -158,4 +159,27 @@ footer{
 }
 form label{
     color: wheat
+} 
+.mssg{
+    border:1px solid black;
+    margin-top:-30px;
+    background-color:gray; 
+    width:80%;  
+    position:relative;  
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden; 
+    text-overflow: clip; 
+} 
+.mssg div{
+    font-size:20px; 
+    padding:10px;  
+    animation-name: best;
+    animation-iteration-count: infinite;
+    animation-duration: 10s; 
+    animation-timing-function: linear
+}
+@keyframes best{
+    0% {margin-left: -20px; color: gold}
+    100% { margin-left: 100%;color: greenyellow}
 }

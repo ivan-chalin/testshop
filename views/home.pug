@@ -20,10 +20,12 @@ body
                 a(href='/list') list 
                 a(href='/profil/') profil
                 a(href='/logout') logout
-            div.greeting wellcome 
-            h4.greeting=currentUser.username
-    section.mean  
-        block content
+            span.greeting wellcome 
+                span=currentUser.username 
+    block content 
+        div.mssg 
+            div this is a test case
+        section.mean
             h1 our test online shop
             br 
             br

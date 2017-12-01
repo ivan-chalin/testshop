@@ -1,17 +1,18 @@
 extends home.pug
 block content
-    h1 adminpanel
-    div.adminmenu 
-        a(href='/adddetail') adddetail
-    br
-    div.table
-        table
-            tr
-                th stocks
-                th price
-                th count
-            each val in stock
+    section.mean
+        h1 adminpanel
+        div.adminmenu 
+            a(href='/adddetail') adddetail
+        br
+        div.table
+            table
                 tr
-                    td=val.detail.name
-                    td=val.detail.price
-                    td=val.detail.count
+                    th stocks
+                    th price
+                    th count
+                each val in stock
+                    tr
+                        td=val.detail.name
+                        td=val.detail.price
+                        td=val.detail.count

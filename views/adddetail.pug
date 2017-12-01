@@ -1,22 +1,23 @@
 extends home.pug
 block content
-    h1 adding products
-    div.log
-        form(action="/adddetail" method="POST")
-            label name
-            br
-            input(type="text" name="name" )
-            br
-            label price
-            br
-            input(type="text" name='price')
-            br
-            label count
-            br
-            input(type="text" name='count')
-            br
-            label image
-            br
-            input(name="image")
-            br
-            button add
+    section.mean 
+        h1 adding products
+        div.log
+            form(action="/adddetail" method="POST")
+                label name
+                br
+                input(type="text" name="name" )
+                br
+                label price
+                br
+                input(type="text" name='price')
+                br
+                label count
+                br
+                input(type="text" name='count')
+                br
+                label image
+                br
+                input(name="image")
+                br
+                button add

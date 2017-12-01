@@ -1,15 +1,16 @@
 extends home.pug
 block content
-    h1 your profile
-    br
-    div.table
-        table
-            tr
-                th name
-                th price
-                th date
-            each val in purchases
+    section.mean
+        h1 your profile
+        br
+        div.table
+            table
                 tr
-                    td=val.detail.name
-                    td=val.detail.price
-                    td=val.date
+                    th name
+                    th price
+                    th date
+                each val in purchases
+                    tr
+                        td=val.detail.name
+                        td=val.detail.price
+                        td=val.date
