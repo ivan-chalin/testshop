@@ -133,28 +133,28 @@ footer{
     background-image: url('test.jpg'); 
 } 
 .first{ 
-    width: 100px;
+    width: 40%px;
     height: 100px;
-    margin-left:35%; 
+    margin-left:30%; 
     animation-name: hit;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite  
 } 
 
 @keyframes hit{
     0%{transform: scale(0.1);opacity: 0.0}
-    100%{transform: scale(1.9);opacity: 1}
+    100%{transform: scale(1.5);opacity: 1}
 }
 .second{
-    width: 100px;
+    width: 40%px;
     height: 100px;
-    margin-left:35%;
+    margin-left:30%;
     animation-name: hit1;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite   
 }
 @keyframes hit1{
-    0%{transform: scale(1.9);opacity: 1}
+    0%{transform: scale(1.5);opacity: 1}
     100%{transform: scale(0.1);opacity: 0}
 }
 form label{
@@ -162,21 +162,23 @@ form label{
 } 
 .mssg{
     border:1px solid black;
+    border-bottom-right-radius:13px;
+    border-bottom-left-radius: 13px; 
     margin-top:-30px;
     background-color:gray; 
-    width:80%;  
+    width:82%;  
     position:relative;  
     white-space: nowrap; 
-    width: 100%; 
+    left:9%; 
     overflow: hidden; 
     text-overflow: clip; 
 } 
-.mssg div{
+.mssg span{ 
     font-size:20px; 
     padding:10px;  
     animation-name: best;
     animation-iteration-count: infinite;
-    animation-duration: 10s; 
+    animation-duration: 13s; 
     animation-timing-function: linear
 }
 @keyframes best{
