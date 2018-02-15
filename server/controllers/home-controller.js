@@ -14,5 +14,19 @@ module.exports = {
        })
        
      } 
-   } 
+   },
+   
+   home:(req, res) => { 
+    if(req.user === undefined || req.user.username !='Admin') {
+    res.render('new/home') 
+    }
+    else{ 
+      deal.find({}) 
+      .populate('detail')
+      .then((data)=>{ 
+        res.render('adminpanel', {stock:data})
+      })
+      
+    } 
+  }
  }

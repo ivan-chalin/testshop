@@ -5,13 +5,13 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title shop
-    link(href="/site.css" rel="stylesheet") 
+    link(href="/stile.css" rel="stylesheet") 
 body
     header
         img(src="/header.jpg", alt="error")
         if !currentUser
             div  
-                a(href='./register') register
+                a(href='/register') register
                 a(href='/login') login
                 a(href='/list') list 
                 a(href='/new/home') new version
@@ -25,20 +25,20 @@ body
                 a(href='/logout') logout
             span.greeting wellcome 
                 span=currentUser.username 
-    block content 
-        div.mssg 
-            span this is a test case 
-        section.mean
-            h1 our test online shop
-            br 
-            br
-            h5 this is not a real store, here all is for testing purposes
-            br
-            h3=tanks
-            br
-            br 
-            p.first
-                img(src="first.jpg")
-            p.second
-                img(src="second.jpg") 
-    footer 
+    block content  
+            div.slider
+                div.first  
+                    img(src="/bedroom.jpeg", alt="error")  
+                div.second  
+                    img(src="/kitchen.jpeg", alt="error")
+            ul.menu
+                li
+                    a(href='/list') products
+                li 
+                    a(href='/profil/') profil
+                li
+                    a(href='/new/kitchen') kitchen
+                li
+                    a(href='/new/bedroom') bedroom
+                        
+                      

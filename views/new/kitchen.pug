@@ -1,0 +1,14 @@
+extends home.pug
+block content
+    h1 tova e kitchen
+    br
+    br
+    each i in data
+            div 
+                p=i.name
+                p=i.price 
+                p=i.kind
+                img(src=i.image, alt="")
+                br
+                br
+                a(href='/new/buy/' +i._id) browse and buy

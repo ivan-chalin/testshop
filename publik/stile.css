@@ -1,0 +1,74 @@
+header img{
+    width: 100%;
+    height:250px 
+}
+header a{
+    margin-left: 10%;
+    position:relative; 
+    top:-40px; 
+    color:rgb(212, 131, 10);
+    font-size: 25px;  
+} 
+.greeting{
+    position: absolute;
+    top: 100px; 
+    color: rgb(233, 93, 13);
+    font-size:35px;
+    margin-left:40%  
+}
+  
+.slider{
+    display: inline-block ;
+    width: 70%;
+    height:500px;  
+    overflow: hidden; 
+    border-radius: 20px;
+}
+
+.first{ 
+     
+    animation-name: slid;
+    animation-duration: 10s;
+    animation-iteration-count: infinite
+}
+
+.first img{
+    width: 100%;
+    height: 500px; 
+}
+
+.second{ 
+    
+    animation-name: slid1;
+    animation-duration: 10s; 
+    animation-iteration-count: infinite
+}
+
+.second img{
+    width: 100%;
+    margin-top:-600px;  
+    height: 550px; 
+}
+
+  
+ @keyframes slid{
+    0%{margin-left: -100%;  }
+    25%{margin-left: 0%; }
+    50%{margin-left: 0%;  opacity: 1}
+    75%{margin-left: 100%;opacity:0.4  ;visibility: hidden}
+    100%{margin-left: -100%;visibility: hidden}
+ }
+ @keyframes slid1{
+     0%{margin-left: 0%}
+     25%{margin-left:100%;opacity:0.4; visibility: hidden }
+     50%{margin-left: -100%;visibility:hidden }
+     75%{margin-left: 0%;opacity: 1; }
+     100%{margin-left: 0%}
+ }
+
+ .menu{
+     display: inline-block
+ }
+
+
+ 

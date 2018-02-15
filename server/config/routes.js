@@ -16,7 +16,15 @@ module.exports = (app) => {
   app.get('/adddetail',auth.isInRole('Admin'), controllers.detail.adddetail)
   app.post('/adddetail',auth.isInRole('Admin'), controllers.detail.postdetail) 
 
-  app.get('/buy/:id',auth.isAuthenticated, controllers.detail.show)
+  app.get('/new/buy/:id',auth.isAuthenticated, controllers.detail.show)
 
   app.post('/shopping/:id', controllers.detail.shopping)
+
+
+
+
+  app.get('/new/home', controllers.home.home)
+  app.get('/new/kitchen', controllers.detail.kitchen)
+  app.get('/new/bedroom', controllers.detail.bedroom)
+
 }

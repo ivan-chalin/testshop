@@ -12,7 +12,8 @@ module.exports = {
            name:obj.name,
            price:obj.price,
            count:obj.count,
-           image:obj.image  
+           image:obj.image,
+           kind: obj.kind
         }).then(()=>{
             res.redirect('/') 
         }) 
@@ -37,7 +38,7 @@ module.exports = {
     show:(req, res)=>{
         let id = req.params.id
         detail.findById({_id:id})
-        .then((data)=> {res.render('buy', {data:data})})
+        .then((data)=> {res.render('new/buy', {data:data})})
     },
     shopping:(req, res)=>{
        let detailid = req.params.id
@@ -54,7 +55,21 @@ module.exports = {
          produkt.count = count -1
          produkt.save()
            res.render('home', {tanks:'thank you for your purchase'})
-       })
-        
-    }
-}
+       }) 
+     
+    },
+
+    kitchen:(req, res)=>{
+        detail.find({kind:"kitchen"})
+        .then((data)=>{
+            res.render('new/kitchen', {data:data})
+        })
+    },
+
+    bedroom:(req, res)=>{
+        detail.find({kind:"bedroom"})
+        .then((data)=>{
+            res.render('new/bedroom', {data:data})
+        })
+    },
+ }
