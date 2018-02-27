@@ -13,7 +13,8 @@ module.exports = {
            price:obj.price,
            count:obj.count,
            image:obj.image,
-           kind: obj.kind
+           kind: obj.kind,
+           discount:obj.discount
         }).then(()=>{
             res.redirect('/') 
         }) 
@@ -60,16 +61,64 @@ module.exports = {
     },
 
     kitchen:(req, res)=>{
+        let page = parseInt(req.query.page) || 1
+        let size = 2
+
         detail.find({kind:"kitchen"})
+        .skip((page - 1)*size)
+        .limit(size)
         .then((data)=>{
-            res.render('new/kitchen', {data:data})
+            res.render('new/kitchen', {data:data,
+                 prevpage: page -1,
+                 nextpage: page +1
+            })
         })
     },
 
     bedroom:(req, res)=>{
+        let page = parseInt(req.query.page) || 1
+        let size = 2
+
         detail.find({kind:"bedroom"})
-        .then((data)=>{
-            res.render('new/bedroom', {data:data})
+        .skip((page - 1)*size)
+        .limit(size)
+        .then((data)=>{ 
+            res.render('new/bedroom', {data:data,
+                prevpage: page -1,
+                nextpage: page +1
+            })
         })
     },
+
+    livingroom:(req, res)=>{
+        let page = parseInt(req.query.page) || 1
+        let size = 2
+
+        detail.find({kind:"livingroom"})
+        .skip((page - 1)*size)
+        .limit(size)
+        .then((data)=>{
+            res.render('new/livingroom', {data:data,
+                prevpage: page -1,
+                nextpage: page +1
+            })
+        })
+    },
+
+    listed:(req, res)=>{
+        let page = parseInt(req.query.page) || 1
+        let size = 2
+
+        detail.find({})
+        .sort('price') 
+        .then((data)=>{ 
+            let count = []
+            for(let i = 0; i <= data.length / 2;i++){count.push(i + 1)}
+            res.render('new/listing', {produkt:data.slice((page -1)*size, size * page),
+                 prevpage: page - 1, 
+                 nextpage:page + 1,
+                 pg: count
+                }   
+        )})
+    }
  }

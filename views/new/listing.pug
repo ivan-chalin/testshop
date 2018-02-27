@@ -1,15 +1,19 @@
 extends home.pug
-block content
-    h1 tova e kitchen
-    br
-    br
-    each i in data
-            div.preview
-                a(href='/new/buy/' +i._id) browse and buy 
+block content 
+        h1 our suggestions
+        br 
+        section.old
+            h1 old version
+            p our old version is still up to date
+            a(href='/home') to the old version
+            br 
+            br 
+        each i in produkt
+            div.preview 
+                a(href='/new/buy/'+ i._id) browse and buy
                     p=i.name
-                    p=i.price
-                        span $ 
-                    p=i.kind
+                    p=i.price 
+                        strong $
                     if i.discount > 0
                         div#discount
                             p 
@@ -24,10 +28,8 @@ block content
                     img(src=i.image, alt="") 
             br
             br
-    div.simple-page 
-        if prevpage > 0
-            a(href='/new/kitchen?page='+prevpage) << prev 
-        if data.length == 2
-            a(href='/new/kitchen?page='+nextpage) next >>
-    br
-    br
+        div.page 
+            each i in pg 
+                a(href='/listing?page=' + i)
+                    span=i
+        br 

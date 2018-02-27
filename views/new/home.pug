@@ -5,6 +5,7 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title shop
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
     link(href="/stile.css" rel="stylesheet") 
 body
     header
@@ -12,33 +13,37 @@ body
         if !currentUser
             div  
                 a(href='/register') register
-                a(href='/login') login
-                a(href='/list') list 
-                a(href='/new/home') new version
+                a(href='/login') login 
 
         if currentUser  
             div  
-                a(href='/home') home
-                a(href='/list') list 
-                a(href='/profil/') profil
-                a(href='/new/home') new version
+                a(href='/new/home') home  
                 a(href='/logout') logout
             span.greeting wellcome 
                 span=currentUser.username 
+    ul.menu
+                li products
+                    a(href='/new/listing') all  
+                    a(href='/new/discount') discounts
+                    a(href='#') new
+                li profil
+                    a(href='/profil/') you are
+                li kitchan
+                    a(href='/new/kitchen') all
+                    a(href='/new/kitdiscount') discounts
+                    a(href='#') new
+                li bedroom
+                    a(href='/new/bedroom') all
+                    a(href='/new/beddiscount') discounts
+                    a(href='#') new
+                li livingroom
+                    a(href='/new/livingroom') all
+                    a(href='/new/livdiscount') discounts
+                    a(href='#') new 
     block content  
             div.slider
                 div.first  
                     img(src="/bedroom.jpeg", alt="error")  
                 div.second  
-                    img(src="/kitchen.jpeg", alt="error")
-            ul.menu
-                li
-                    a(href='/list') products
-                li 
-                    a(href='/profil/') profil
-                li
-                    a(href='/new/kitchen') kitchen
-                li
-                    a(href='/new/bedroom') bedroom
-                        
-                      
+                    img(src="/kitchen.jpeg", alt="error") 
+    script(src='/scripts.js')

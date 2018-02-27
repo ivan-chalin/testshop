@@ -6,7 +6,8 @@ let detailSchema = new mongoose.Schema({
    price:{type:Number, required:true},
    image:{type:String, required:true},
    count:{type:Number,required:true},
-   kind:{type:String}
+   kind:{type:String},
+   discount:{type:Number}
 })
 
 let detail = mongoose.model('detail', detailSchema)

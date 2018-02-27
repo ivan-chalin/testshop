@@ -2,7 +2,7 @@ const controllers = require('../controllers')
 const auth = require('./auth')
 
 module.exports = (app) => {
-  app.get('/', controllers.home.index)  
+  app.get('/', controllers.home.home)  
   app.get('/home', controllers.home.index)
 
   app.get('/register', controllers.users.registerGet)
@@ -26,5 +26,14 @@ module.exports = (app) => {
   app.get('/new/home', controllers.home.home)
   app.get('/new/kitchen', controllers.detail.kitchen)
   app.get('/new/bedroom', controllers.detail.bedroom)
+  app.get('/new/livingroom', controllers.detail.livingroom)
+  app.get('/new/listing', controllers.detail.listed)
+  app.get('/listing', controllers.detail.listed)
+
+  app.get('/new/discount', controllers.discount.all)
+  app.get('/new/beddiscount', controllers.discount.bedroom)
+  app.get('/new/kitdiscount', controllers.discount.kitchen)
+  app.get('/new/livdiscount', controllers.discount.livingroom)
+
 
 }

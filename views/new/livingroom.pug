@@ -1,8 +1,8 @@
-extends home.pug
+extends home.pug 
 block content
-    h1 tova e bedroom
+    h1 tova e living room
     br
-    br 
+    br
     each i in data
             div.preview
                 a(href='/new/buy/' +i._id) browse and buy 
@@ -21,12 +21,12 @@ block content
                             br 
                             span=i.price - (i.price * i.discount)/100
                                 span $
-                    img(src=i.image, alt="")  
-            br
+                    img(src=i.image, alt="") 
+            br 
     div.simple-page 
         if prevpage > 0
-            a(href='/new/bedroom?page='+prevpage) << prev 
+            a(href='/new/livingroom?page='+prevpage) << prev 
         if data.length == 2
-            a(href='/new/bedroom?page='+nextpage) next >> 
+            a(href='/new/livingroom?page='+nextpage) next >> 
     br
     br
