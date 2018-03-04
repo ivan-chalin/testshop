@@ -1,0 +1,29 @@
+extends home.pug
+block content
+    section.mean
+        h1 adminpanel
+        div.adminmenu 
+            a(href='/adddetail') adddetail 
+        br
+        div.table
+            table
+                tr
+                    th name
+                    th price
+                    th count 
+                    th kind
+                    th discount
+                    th edit
+                    th dellete
+                each val in data
+                    tr
+                        td=val.name
+                        td=val.price
+                        td=val.count
+                        td=val.kind
+                        td=val.discount
+                        td  
+                            a(href='/editProduct/'+val._id) edit
+                        td
+                            form(action="/edit/"+val._id method='POST') 
+                                button remove  

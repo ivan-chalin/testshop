@@ -87,7 +87,8 @@ strong{
 }
 .adminmenu a{
     color: rgb(233, 93, 13);
-    font-size: 25px
+    font-size: 25px;
+    padding: 5px
 }
 .buy span{
     padding: 5px

@@ -4,6 +4,7 @@ block content
         h1 adminpanel
         div.adminmenu 
             a(href='/adddetail') adddetail
+            a(href='/edit') edit
         br
         div.table
             table
@@ -11,7 +12,7 @@ block content
                     th stocks
                     th price
                     th count 
-                each val in stock
+                each val in stock 
                     tr
                         td=val.detail.name
                         td=val.detail.price

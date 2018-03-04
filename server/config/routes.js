@@ -15,6 +15,10 @@ module.exports = (app) => {
   app.get('/list', controllers.detail.listing)
   app.get('/adddetail',auth.isInRole('Admin'), controllers.detail.adddetail)
   app.post('/adddetail',auth.isInRole('Admin'), controllers.detail.postdetail) 
+  app.get('/edit',auth.isInRole('Admin'), controllers.detail.edit)
+  app.post('/edit/:id', controllers.detail.remove)
+  app.get('/editProduct/:id', controllers.detail.editproduct)
+  app.post('/postEdit', controllers.detail.postEdit)
 
   app.get('/new/buy/:id',auth.isAuthenticated, controllers.detail.show)
 
@@ -35,5 +39,5 @@ module.exports = (app) => {
   app.get('/new/kitdiscount', controllers.discount.kitchen)
   app.get('/new/livdiscount', controllers.discount.livingroom)
 
-
+  
 }

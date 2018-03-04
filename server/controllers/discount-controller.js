@@ -6,7 +6,7 @@ module.exports = {
     all:(req, res)=>{
         detail.find({discount:{$gt:0}}) 
         .then((data)=>{ 
-            res.render('new/discount', {data:data})
+            res.render('new/discount', {data:data, kind:"all"})
 
         })
     },

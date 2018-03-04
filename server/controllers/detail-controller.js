@@ -19,6 +19,46 @@ module.exports = {
             res.redirect('/') 
         }) 
 },
+
+    edit:(req,res)=>{
+        detail.find({})
+        .then((data)=>{
+            res.render('edit', {data:data})
+        })
+      },
+
+    remove:(req,res)=>{
+      let ID = req.params.id
+
+     detail.findById({_id:ID})
+      .then((data)=>{ 
+          data.remove()
+           res.redirect('/edit')
+      })  
+    },
+
+    editproduct:(req, res)=>{
+       let ID = req.params.id
+
+       detail.findById({_id:ID})
+       .then((data)=>{
+           res.render('editProduct',{data:data})
+       })
+    },
+
+    postEdit:(req, res)=>{
+       var obj = req.body
+
+       detail.update({_id:obj.id}, {$set:{
+        name:obj.name,
+        price:obj.price,
+        count:obj.count,
+        image:obj.image,
+        kind: obj.kind,
+        discount:obj.discount
+       }})
+       .then(()=>{res.redirect('/')})
+    },
     listing:(req, res) =>{
         let page = parseInt(req.query.page) || 1
         let size = 2

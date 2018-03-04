@@ -1,0 +1,39 @@
+extends home.pug
+block content
+    h1 EDIT PRODUCT
+    div.adminmenu 
+        a(href='/adddetail') adddetail 
+        a(href='/edit') edit
+        br
+        img(src=data.image, alt="")
+        br
+        form(action="/postEdit" method="POST")
+                label name
+                br
+                input(type="text" name="name" value=data.name)
+                br
+                label price
+                br
+                input(name='price' value=data.price)
+                br
+                label count
+                br
+                input(name='count' value=data.count)
+                br
+                label image
+                br
+                input(name="image" value=data.image)
+                br
+                label kind
+                br
+                input(type="text" name="kind" value=data.kind)
+                br
+                label discount
+                br
+                input( name="discount" value=data.discount)
+                br
+                label ID
+                br
+                input(name='id' value=data._id)
+                br
+                button update 
