@@ -4,6 +4,9 @@ block content
         p=data.name  
         p price :
             span=data.price
+        if data.discount > 0
+            p with discount
+                span=data.price - (data.price * data.discount)/100 
         img(src=data.image, alt="error")
         br  
         br 

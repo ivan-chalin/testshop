@@ -121,7 +121,6 @@ a{
     0%{transform: scale(0.4); opacity: 0.3}
     100%{transform: scale(1.3)}
 }
-
  
 
 .menu{
@@ -139,12 +138,15 @@ a{
     background-color: red;
     list-style-type: none;
     color:  wheat;
-
+    height: 30px;
+    border-radius: 10px; 
+    font-size: 20px
 }
  
 .menu li a{
     
-    display: none
+    display: none;
+    width: 100px
 }
 
 .menu li:hover  a{
@@ -152,10 +154,11 @@ a{
     font-size:20px;
     background-color:gray;
     color: gold; 
+    margin-left: -70px;  
+    position: relative
 }
 
-.menu :hover{
-     font-size: 30px;
+.menu :hover{ 
      color: greenyellow
 }
 .buy{
@@ -167,7 +170,16 @@ a{
    height:600px ;
 }
 .buy p{
-    text-align: center
+    text-align: center;
+    background-color: greenyellow;
+    padding: 10px;
+    width: 40%;
+    margin-left: 25% ;
+    border-radius:10px;   
+}
+
+.buy p span{
+    padding-left: 10px
 }
 .buy button{
     margin-left: 80%;
@@ -199,10 +211,16 @@ a{
     text-align: center;
     border: 1px solid red;
     width: 20%;
-    height:450px ;
-    position:  absolute;
-    background-color: gray;
-    border-radius: 20px
+    height:930px ;
+    position:  absolute; 
+    border-radius: 20px;
+    background: linear-gradient(rgb(163, 154, 154), rgb(28, 28, 31));
+}
+.old img{
+    width: 80%;
+    height: 30%;
+    border: 4px solid rgb(114, 60, 60);
+    border-radius: 10px
 }
 
 footer{

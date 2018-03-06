@@ -22,7 +22,7 @@ module.exports = (app) => {
 
   app.get('/new/buy/:id',auth.isAuthenticated, controllers.detail.show)
 
-  app.post('/shopping/:id', controllers.detail.shopping)
+  app.post('/shopping/:id', controllers.detail.sales)
 
 
 

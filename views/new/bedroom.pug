@@ -1,8 +1,22 @@
 extends home.pug
 block content
     h1 tova e bedroom
-    br
     br 
+    section.old
+            h1 old version
+            p our old version is still up to date
+            a(href='/home') to the old version
+            br 
+            br 
+            img(src="/first.jpg", alt="")
+            br
+            br
+            br
+            br
+            img(src="/bedroom.jpeg", alt="")
+            br
+            br
+            h2 the best furniture
     each i in data
             div.preview
                 a(href='/new/buy/' +i._id) browse and buy 

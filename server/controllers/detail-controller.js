@@ -1,6 +1,7 @@
 let detail = require('../data/detail')
 let usar = require('../data/User')
-let deal = require('../data/deal')
+let deal = require('../data/deal') 
+let sale = require('../data/sale')
 
 module.exports = {
     adddetail:(req, res)=>{
@@ -99,6 +100,26 @@ module.exports = {
        }) 
      
     },
+
+    sales:(req, res)=>{
+        let detailid = req.params.id
+        let userid = req.user._id 
+        detail.findOne({_id:detailid}) 
+        .then((produkt)=>{
+            sale.create({
+             user:userid,
+             detail:produkt.name,
+             date:new Date().toDateString(),
+             totalprice:produkt.price  
+            })
+         let count = produkt.count 
+          produkt.count = count -1
+          produkt.save()
+            res.render('home', {tanks:'thank you for your purchase'})
+        }) 
+      
+     },
+ 
 
     kitchen:(req, res)=>{
         let page = parseInt(req.query.page) || 1

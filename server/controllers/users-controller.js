@@ -2,6 +2,7 @@ const encryption = require('../utilities/encryption')
 const User = require('mongoose').model('User')
 let deal = require('../data/deal') 
 let detail = require('../data/detail')
+let sale = require('../data/sale')
 
 module.exports = {
   registerGet: (req, res) => {
@@ -73,8 +74,8 @@ module.exports = {
   },
    profil:(req, res)=>{
      let person = req.user._id
-     deal.find({user:person}) 
-     .populate('detail')
+     sale.find({user:person}) 
+     //.populate('detail')
      .then((bag)=>{
        res.render('profil', {purchases:bag})
      })
