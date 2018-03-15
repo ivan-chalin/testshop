@@ -23,21 +23,21 @@ body
                 span=currentUser.username 
     ul.menu
                 li products
-                    a(href='/new/listing') all  
+                    a(href='/new/listings') all  
                     a(href='/new/discount') discounts
                     a(href='#') new
                 li profil
                     a(href='/profil/') you are
                 li kitchan
-                    a(href='/new/kitchen') all
+                    a(href='/new/kitchens') all
                     a(href='/new/kitdiscount') discounts
                     a(href='#') new
                 li bedroom
-                    a(href='/new/bedroom') all
+                    a(href='/new/bedrooms') all
                     a(href='/new/beddiscount') discounts
                     a(href='#') new
                 li livingroom
-                    a(href='/new/livingroom') all
+                    a(href='/new/livingrooms') all
                     a(href='/new/livdiscount') discounts
                     a(href='#') new 
     block content  
@@ -46,6 +46,18 @@ body
                     img(src="/bedroom.jpeg", alt="error")  
                 div.second  
                     img(src="/kitchen.jpeg", alt="error")
+            br
+            br 
+            div.vision 
+                a(href='/new/kitdiscount') see more
+                img(src="/first.jpg", alt="error") 
+            div.vision 
+                a(href='/new/beddiscount') see more
+                img(src="/second.jpg", alt="error") 
+            div.vision  
+                a(href='/new/livdiscount') see more
+                img(src="/header.jpg", alt="error")    
+            hr
     footer
         h2 Play our game made specifically for automotive maniacs 
         a(href='https://github.com/ivan-chalin/Games') 

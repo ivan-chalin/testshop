@@ -1,6 +1,10 @@
 extends home.pug
 block content
     h1 discount
+        if kind
+            strong=kind
+        if !kind
+            strong=data[0].kind
     br
     br
     section.old
@@ -18,11 +22,8 @@ block content
             br
             br
             h2 the best furniture  
-    if kind
-        strong=kind
-    if !kind
-        strong=data[0].kind
-    each i in data
+    section.detail
+        each i in data
             div.preview
                 a(href='/new/buy/' +i._id) browse and buy 
                     p=i.name
@@ -31,4 +32,18 @@ block content
                     p=i.kind
                     img(src=i.image, alt="")
                     p=i.discount
-            br
+            br 
+        if kind
+            div.simple-page 
+                if prevpage > 0
+                    a(href='/new/discount?page='+prevpage) << prev 
+                if data.length == 2  
+                    a(href="/new/discount?page=" +nextpage) next >> 
+        if !kind
+            div.simple-page 
+                if prevpage > 0
+                    a(href='/new/'+data[0].kind + '?page='+prevpage) << prev 
+                if data.length == 2  
+                    a(href="/new/"+data[0].kind + "?page=" +nextpage) next >>
+    br 
+    br 

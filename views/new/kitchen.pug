@@ -1,6 +1,6 @@
 extends home.pug
 block content
-    h1 tova e kitchen
+    h1 our kitchens 
     br 
     section.old
             h1 old version
@@ -17,7 +17,8 @@ block content
             br
             br
             h2 the best furniture
-    each i in data
+    section.detail
+        each i in data
             div.preview
                 a(href='/new/buy/' +i._id) browse and buy 
                     p=i.name
@@ -35,13 +36,12 @@ block content
                             br 
                             span=i.price - (i.price * i.discount)/100
                                 span $
-                    img(src=i.image, alt="") 
+                    img(src=i.image, alt="")  
             br
-            br
-    div.simple-page 
-        if prevpage > 0
-            a(href='/new/kitchen?page='+prevpage) << prev 
-        if data.length == 2
-            a(href='/new/kitchen?page='+nextpage) next >>
+        div.simple-page 
+            if prevpage > 0
+                a(href='/new/kitchens?page='+prevpage) << prev 
+            if data.length == 2
+                a(href='/new/kitchens?page='+nextpage) next >>
     br
     br

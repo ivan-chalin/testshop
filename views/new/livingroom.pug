@@ -1,6 +1,6 @@
 extends home.pug 
 block content
-    h1 tova e living room
+    h1 our living rooms 
     br 
     section.old
             h1 old version
@@ -17,7 +17,8 @@ block content
             br
             br
             h2 the best furniture
-    each i in data
+    section.detail
+        each i in data
             div.preview
                 a(href='/new/buy/' +i._id) browse and buy 
                     p=i.name
@@ -37,10 +38,10 @@ block content
                                 span $
                     img(src=i.image, alt="") 
             br 
-    div.simple-page 
-        if prevpage > 0
-            a(href='/new/livingroom?page='+prevpage) << prev 
-        if data.length == 2
-            a(href='/new/livingroom?page='+nextpage) next >> 
+        div.simple-page 
+            if prevpage > 0
+                a(href='/new/livingrooms?page='+prevpage) << prev 
+            if data.length == 2
+                a(href='/new/livingrooms?page='+nextpage) next >> 
     br
     br
